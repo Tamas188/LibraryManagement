@@ -7,39 +7,31 @@ namespace LibraryManagement
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtUsername_MouseEnter(object sender, EventArgs e)
         {
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void txtUsername_MouseClick(object sender, MouseEventArgs e)
         {
-
+            if (txtUsername.Text == "Felhasználónév")
+            {
+                txtUsername.Clear();
+            }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void txtPassword_MouseClick(object sender, MouseEventArgs e)
         {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
+            if (txtPassword.Text == "Jelszó")
+            {
+                txtPassword.Clear();
+                txtPassword.PasswordChar = '*';
+            }
         }
     }
 }

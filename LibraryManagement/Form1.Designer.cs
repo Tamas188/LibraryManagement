@@ -31,14 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtUsername = new TextBox();
+            txtPassword = new TextBox();
             pictureBox4 = new PictureBox();
             panel1 = new Panel();
             panel2 = new Panel();
             pictureBox3 = new PictureBox();
             button1 = new Button();
             button2 = new Button();
+            btnClose = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -48,63 +49,64 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(117, 39);
+            pictureBox1.Location = new Point(121, 28);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(112, 119);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(93, 132);
+            pictureBox2.Location = new Point(92, 112);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(163, 113);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
             // 
-            // textBox1
+            // txtUsername
             // 
-            textBox1.BackColor = Color.BurlyWood;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            textBox1.ForeColor = Color.Black;
-            textBox1.Location = new Point(92, 255);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(183, 20);
-            textBox1.TabIndex = 2;
-            textBox1.TextChanged += textBox1_TextChanged;
+            txtUsername.BackColor = Color.BurlyWood;
+            txtUsername.BorderStyle = BorderStyle.None;
+            txtUsername.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            txtUsername.ForeColor = Color.White;
+            txtUsername.Location = new Point(92, 231);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(183, 20);
+            txtUsername.TabIndex = 2;
+            txtUsername.Text = "Felhasználónév";
+            txtUsername.MouseClick += txtUsername_MouseClick;
+            txtUsername.MouseEnter += txtUsername_MouseEnter;
             // 
-            // textBox2
+            // txtPassword
             // 
-            textBox2.BackColor = Color.BurlyWood;
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            textBox2.ForeColor = Color.Black;
-            textBox2.Location = new Point(92, 314);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(183, 20);
-            textBox2.TabIndex = 3;
+            txtPassword.BackColor = Color.BurlyWood;
+            txtPassword.BorderStyle = BorderStyle.None;
+            txtPassword.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            txtPassword.ForeColor = Color.White;
+            txtPassword.Location = new Point(92, 286);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(183, 20);
+            txtPassword.TabIndex = 3;
+            txtPassword.Text = "Jelszó";
+            txtPassword.MouseClick += txtPassword_MouseClick;
             // 
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(60, 313);
+            pictureBox4.Location = new Point(60, 279);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(26, 27);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 5;
             pictureBox4.TabStop = false;
-            pictureBox4.Click += pictureBox4_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Location = new Point(92, 277);
+            panel1.Location = new Point(92, 249);
             panel1.Name = "panel1";
             panel1.Size = new Size(183, 2);
             panel1.TabIndex = 6;
@@ -112,7 +114,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Location = new Point(92, 336);
+            panel2.Location = new Point(92, 304);
             panel2.Name = "panel2";
             panel2.Size = new Size(183, 2);
             panel2.TabIndex = 7;
@@ -120,31 +122,56 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(60, 255);
+            pictureBox3.Location = new Point(60, 224);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(26, 27);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 8;
             pictureBox3.TabStop = false;
-            pictureBox3.Click += pictureBox3_Click_1;
             // 
             // button1
             // 
-            button1.Location = new Point(60, 369);
+            button1.BackColor = Color.Salmon;
+            button1.FlatAppearance.BorderColor = Color.White;
+            button1.FlatAppearance.BorderSize = 2;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(60, 345);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(215, 36);
             button1.TabIndex = 9;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            button1.Text = "Bejelentkezés";
+            button1.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
-            button2.Location = new Point(60, 408);
+            button2.BackColor = Color.SteelBlue;
+            button2.FlatAppearance.BorderColor = Color.White;
+            button2.FlatAppearance.BorderSize = 2;
+            button2.FlatStyle = FlatStyle.Popup;
+            button2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(60, 387);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(215, 36);
             button2.TabIndex = 10;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            button2.Text = "Regisztráció";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // btnClose
+            // 
+            btnClose.BackColor = Color.Tomato;
+            btnClose.FlatStyle = FlatStyle.Popup;
+            btnClose.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            btnClose.ForeColor = Color.White;
+            btnClose.Location = new Point(296, 12);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(25, 23);
+            btnClose.TabIndex = 11;
+            btnClose.Text = "X";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
             // 
             // Form1
             // 
@@ -152,6 +179,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.BurlyWood;
             ClientSize = new Size(333, 461);
+            Controls.Add(btnClose);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(pictureBox3);
@@ -160,13 +188,12 @@
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox1);
             Controls.Add(pictureBox2);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtPassword);
+            Controls.Add(txtUsername);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -179,13 +206,14 @@
 
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtUsername;
+        private TextBox txtPassword;
         private PictureBox pictureBox4;
         private Panel panel1;
         private Panel panel2;
         private PictureBox pictureBox3;
         private Button button1;
         private Button button2;
+        private Button btnClose;
     }
 }
