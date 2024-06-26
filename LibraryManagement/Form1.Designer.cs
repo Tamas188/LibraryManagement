@@ -37,7 +37,7 @@
             panel1 = new Panel();
             panel2 = new Panel();
             pictureBox3 = new PictureBox();
-            button1 = new Button();
+            btnLogin = new Button();
             button2 = new Button();
             btnClose = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -129,20 +129,21 @@
             pictureBox3.TabIndex = 8;
             pictureBox3.TabStop = false;
             // 
-            // button1
+            // btnLogin
             // 
-            button1.BackColor = Color.Salmon;
-            button1.FlatAppearance.BorderColor = Color.White;
-            button1.FlatAppearance.BorderSize = 2;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(60, 345);
-            button1.Name = "button1";
-            button1.Size = new Size(215, 36);
-            button1.TabIndex = 9;
-            button1.Text = "Bejelentkezés";
-            button1.UseVisualStyleBackColor = false;
+            btnLogin.BackColor = Color.Salmon;
+            btnLogin.FlatAppearance.BorderColor = Color.White;
+            btnLogin.FlatAppearance.BorderSize = 2;
+            btnLogin.FlatStyle = FlatStyle.Popup;
+            btnLogin.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(60, 345);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(215, 36);
+            btnLogin.TabIndex = 9;
+            btnLogin.Text = "Bejelentkezés";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // button2
             // 
@@ -181,7 +182,7 @@
             ClientSize = new Size(333, 461);
             Controls.Add(btnClose);
             Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnLogin);
             Controls.Add(pictureBox3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -212,7 +213,7 @@
         private Panel panel1;
         private Panel panel2;
         private PictureBox pictureBox3;
-        private Button button1;
+        private Button btnLogin;
         private Button button2;
         private Button btnClose;
     }
