@@ -1,3 +1,4 @@
+using System.Data;
 using System.Data.SqlClient;
 
 namespace LibraryManagement
@@ -40,6 +41,22 @@ namespace LibraryManagement
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = "data source = (localdb)\\Local ; database=libraryManagement;integrated security=True";
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+
+            cmd.CommandText = "select * from loginTable where username = '"+txtUsername.Text+"' and pass = '"+txtPassword.Text+"' ";
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            if (ds.Tables[0].Rows.Count != 0 )
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Hibás Felhasználónév VAGY Jelszó", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
