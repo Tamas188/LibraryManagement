@@ -51,7 +51,9 @@ namespace LibraryManagement
 
             if (ds.Tables[0].Rows.Count != 0 )
             {
-
+                this.Hide();
+                Dashboard dsa = new Dashboard();
+                dsa.Show();
             }
             else
             {
